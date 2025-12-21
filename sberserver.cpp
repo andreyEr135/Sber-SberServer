@@ -169,6 +169,10 @@ SberServer::~SberServer()
 
 void SberServer::closeEvent(QCloseEvent *event)
 {
+    if (startStopButton->text() == "Запустить")
+    {
+        exit(0);
+    }
     if (m_trayIcon->isVisible()) {
         hide();
         event->ignore();
